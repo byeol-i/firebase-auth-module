@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package pb.svc.firebase;
+option go_package = "github.com/byeol-i/firebase-auth-module/pb/svc/firebase";
+
+
+import "pb/unit/common/msg.proto";
+
+service Firebase {
+    rpc GetUser(GetUserReq) returns (GetUserRes);
+    rpc CreateCustomToken(CreateCustomTokenReq) returns (CreateCustomTokenRes);
+    rpc VerifyIdToken(VerifyIdTokenReq) returns (VerifyIdTokenRes);
+    rpc GetUserIdByIdToken(GetUserIdByIdTokenReq) returns (GetUserIdByIdTokenRes);
+}
+
+message VerifyIdTokenReq {
+    string token = 1;
+}
+
+message VerifyIdTokenRes {
+    unit.common.ReturnMsg result = 1;
+}
+
+message CreateCustomTokenReq {
+    string uid = 1;
+    string accessToken = 2;
+}
+
+message CreateCustomTokenRes {
+    string token = 1;
+    string error = 2;
+}
+
+message GetUserReq {
+    string uid = 1;
+}
+
+message GetUserRes {
+    unit.common.ReturnMsg result = 1;
+}
+
+message GetUserIdByIdTokenReq {
+    string token = 1;
+}
+
+message GetUserIdByIdTokenRes {
+    unit.common.ReturnMsg result = 1;
+}

@@ -1,0 +1,37 @@
+version: "3.5"
+
+services:
+    auth:
+        image: ghcr.io/byeol-i/firebase-auth-module:latest
+        networks:
+            - kafka-network
+        secrets:
+            - firebase-key
+        # command: "/opt/bin/app/main -local=True"
+        environment:
+            - TZ=Asia/Seoul
+        deploy:
+            mode: replicated
+            replicas: 1
+            update_config:
+                parallelism: 2
+                order: start-first
+                failure_action: rollback
+                delay: 10s
+            restart_policy:
+                condition: any
+                delay: 5s
+                max_attempts: 3
+                window: 120s
+            placement:
+                constraints: [node.role==worker]
+
+networks:
+    traefik-network:
+        external: true
+
+secrets:
+    firebase-key:
+        file: ./conf/firebase/key.json
+    # firebase-key:
+    #     external: true

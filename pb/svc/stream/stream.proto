@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb.svc.stream;
+option go_package = "github.com/byeol-i/firebase-auth-module/pb/svc/stream";
+
+import "pb/unit/common/msg.proto";
+
+service Stream {
+    rpc VerifyIdToken(stream Authentication) returns (stream Message);
+}
+
+message Message {
+    unit.common.ReturnMsg result = 1;
+}
+
+message Authentication {
+    string token = 1;
+}

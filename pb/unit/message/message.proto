@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package pb.unit.message;
+option go_package = "github.com/byeol-i/firebase-auth-module/pb/unit/message";
+
+message Msg {
+    
+}
