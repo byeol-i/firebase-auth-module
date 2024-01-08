@@ -3,7 +3,7 @@ module github.com/byeol-i/firebase-auth-module
 go 1.20
 
 require (
-	firebase.google.com/go/v4 v4.12.0
+	firebase.google.com/go/v4 v4.13.0
 	github.com/go-playground/validator v9.31.0+incompatible
 	go.uber.org/zap v1.25.0
 	golang.org/x/sync v0.3.0
@@ -35,11 +35,11 @@ require (
 	github.com/stretchr/testify v1.8.4 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/crypto v0.12.0 // indirect
-	golang.org/x/net v0.14.0 // indirect
+	golang.org/x/crypto v0.14.0 // indirect
+	golang.org/x/net v0.17.0 // indirect
 	golang.org/x/oauth2 v0.11.0 // indirect
-	golang.org/x/sys v0.11.0 // indirect
-	golang.org/x/text v0.12.0 // indirect
+	golang.org/x/sys v0.13.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
