@@ -5,7 +5,7 @@ go 1.20
 require (
 	firebase.google.com/go/v4 v4.13.0
 	github.com/go-playground/validator v9.31.0+incompatible
-	go.uber.org/zap v1.25.0
+	go.uber.org/zap v1.26.0
 	golang.org/x/sync v0.4.0
 	google.golang.org/api v0.139.0
 	google.golang.org/grpc v1.60.1
