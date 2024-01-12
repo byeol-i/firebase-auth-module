@@ -3,11 +3,15 @@ version: "3.5"
 services:
     auth:
         image: ghcr.io/byeol-i/firebase-auth-module:latest
+        hostname: sia.auth
         networks:
-            - kafka-network
+            - sia-network
+        ports:
+            - 50024:50024
         secrets:
             - firebase-key
         # command: "/opt/bin/app/main -local=True"
+        command: "/opt/bin/app/main -firebaseProjectID=send-it-anywhere -authAddr=0.0.0.0:50024"
         environment:
             - TZ=Asia/Seoul
         deploy:
@@ -27,11 +31,11 @@ services:
                 constraints: [node.role==worker]
 
 networks:
-    traefik-network:
+    sia-network:
         external: true
 
 secrets:
     firebase-key:
-        file: ./conf/firebase/key.json
+        file: ./firebase/key.json
     # firebase-key:
     #     external: true

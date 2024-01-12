@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ..
 
-docker secret create firebase-key ./conf/firebase/key.json
+docker secret create firebase-key ./firebase/key.json
 
 cd shell
